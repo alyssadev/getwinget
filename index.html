@@ -5,7 +5,7 @@ $adm = 'S-1-5-32-544'
 $cur = [Security.Principal.WindowsIdentity]::GetCurrent()
 if (-NOT ([bool]($cur.Groups -match $adm))) {
   if ($cur.UserClaims | ? { $_.Value -eq $adm}) {
-    Write-Warning "Run Powershell as Administrator, or use `sudo pwsh` (https://github.com/lukesampson/psutils) and run this command again"
+    Write-Warning "Run Powershell as Administrator, or elevate with 'sudo pwsh' (https://github.com/lukesampson/psutils) and then run this command again"
     return
   } else {
     Write-Error "Run Powershell as Administrator"
@@ -15,4 +15,3 @@ if (-NOT ([bool]($cur.Groups -match $adm))) {
 Install-PackageProvider -Name NuGet -Force -ErrorAction SilentlyContinue | Out-Null
 Install-Module -Name Microsoft.WinGet.Client -Force -Repository PSGallery | Out-Null
 Repair-WinGetPackageManager
-winget --info
