@@ -1,3 +1,4 @@
+# <!--
 # The following code verifies that WinGet is installed. Check github.com/alyssadev/getwinget for more info
 # irm https://gwg.aly.pet | iex
 
@@ -15,3 +16,18 @@ if (-NOT ([bool]($cur.Groups -match $adm))) {
 Install-PackageProvider -Name NuGet -Force -ErrorAction SilentlyContinue | Out-Null
 Install-Module -Name Microsoft.WinGet.Client -Force -Repository PSGallery | Out-Null
 Repair-WinGetPackageManager
+exit
+# -->
+<!-- HTML starts here -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>getwinget</title>
+</head>
+<body>
+    <h1><a href="https://github.com/alyssadev/getwinget">alyssadev/getwinget</a></h1>
+    <p>Check the source of this page, and then use <code>irm https://gwg.aly.pet | iex</code> in Powershell as Administrator to ensure that winget is installed.</p>
+</body>
+</html>
