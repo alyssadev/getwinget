@@ -85,7 +85,8 @@ if (-NOT ([bool]($cur.Groups -match $adm))) {
 }
 Install-PackageProvider -Name NuGet -Force -ErrorAction SilentlyContinue | Out-Null
 Install-Module -Name Microsoft.WinGet.Client -Force -Repository PSGallery | Out-Null
-Repair-WinGetPackageManager <# </code></pre>
+Repair-WinGetPackageManager
+Add-AppxPackage https://cdn.winget.microsoft.com/cache/source.msix <# </code></pre>
     <p>Check GitHub for more information: <a href="https://github.com/alyssadev/getwinget">github.com/alyssadev/getwinget</a></p>
   </main>
 </body>
