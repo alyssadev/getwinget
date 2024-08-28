@@ -1,6 +1,6 @@
 # #>
 # The following PowerShell code verifies that WinGet is installed. Check https://gwg.aly.pet for more info
-# irm https://gwg.aly.pet | iex
+# irm gwg.aly.pet | iex
 
 $adm = 'S-1-5-32-544'
 $cur = [Security.Principal.WindowsIdentity]::GetCurrent()
