@@ -15,5 +15,4 @@ if (-NOT ([bool]($cur.Groups -match $adm))) {
 }
 Install-PackageProvider -Name NuGet -Force -ErrorAction SilentlyContinue | Out-Null
 Install-Module -Name Microsoft.WinGet.Client -Force -Repository PSGallery | Out-Null
-Repair-WinGetPackageManager
-exit <#
+Repair-WinGetPackageManager <#
