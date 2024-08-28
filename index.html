@@ -1,4 +1,4 @@
-<# <!-- This document is a HTML description of the PowerShell script embedded within (lines 72-90; search: id="getwinget") -->
+<# <!-- This document is a HTML description of the PowerShell script embedded within (lines 72-88; search: id="getwinget") -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -70,7 +70,7 @@ exit
 	<p>Here's the script source (which PowerShell runs directly from this HTML page, isn't that neat)</p>
 	<pre><code class="language-powershell" id="getwinget"># #>
 # The following PowerShell code verifies that WinGet is installed. Check https://gwg.aly.pet for more info
-# irm https://gwg.aly.pet | iex
+# irm gwg.aly.pet | iex
 
 $adm = 'S-1-5-32-544'
 $cur = [Security.Principal.WindowsIdentity]::GetCurrent()
