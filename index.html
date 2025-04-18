@@ -1,4 +1,4 @@
-<# <!-- This document is a HTML description of the PowerShell script embedded within (lines 72-88; search: id="getwinget") -->
+<# <!-- This document is a HTML description of the PowerShell script embedded within (lines 72-90; search: id="getwinget") -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -86,6 +86,7 @@ if (-NOT ([bool]($cur.Groups -match $adm))) {
 Install-PackageProvider -Name NuGet -Force -ErrorAction SilentlyContinue | Out-Null
 Install-Module -Name Microsoft.WinGet.Client -Force -Repository PSGallery | Out-Null
 Repair-WinGetPackageManager
+Import-Module Appx -UseWinPS # fixes Get-AppxPackage being removed from pwsh 7
 Add-AppxPackage https://cdn.winget.microsoft.com/cache/source.msix <# </code></pre>
     <p>Check GitHub for more information: <a href="https://github.com/alyssadev/getwinget">github.com/alyssadev/getwinget</a></p>
   </main>
@@ -128,4 +129,5 @@ async function copyCode(block, button) {
 });
 </script>
 </html>
-<!-- #>
+<!-- To use this tool to set up and configure WinGet, run as administrator in PowerShell: irm https://gwg.aly.pet | iex
+#>
