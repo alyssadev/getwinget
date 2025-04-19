@@ -15,5 +15,7 @@ if (-NOT ([bool]($cur.Groups -match $adm))) {
 Install-PackageProvider -Name NuGet -Force -ErrorAction SilentlyContinue | Out-Null
 Install-Module -Name Microsoft.WinGet.Client -Force -Repository PSGallery | Out-Null
 Repair-WinGetPackageManager
-Import-Module Appx -UseWinPS # fixes Get-AppxPackage being removed from pwsh 7
+if(!(get-command Add-AppxPackage)) {
+  Import-Module Appx -UseWinPS # fixes Get-AppxPackage being removed from pwsh 7
+}
 Add-AppxPackage https://cdn.winget.microsoft.com/cache/source.msix <#
