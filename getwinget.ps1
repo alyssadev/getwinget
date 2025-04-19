@@ -18,4 +18,5 @@ Repair-WinGetPackageManager
 if(!(get-command Add-AppxPackage)) {
   Import-Module Appx -UseWinPS # fixes Get-AppxPackage being removed from pwsh 7
 }
-Add-AppxPackage https://cdn.winget.microsoft.com/cache/source.msix <#
+Add-AppxPackage https://cdn.winget.microsoft.com/cache/source.msix 
+winget source remove msstore <#
